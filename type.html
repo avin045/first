@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="ms.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>santho</title>
+	<style>
+	body {
+   
+    background-color:black;
+  }
+  h1
+  {
+    font-size: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(161,255,255,1) 11.3%, rgba(6,255,255,1) 41.2%, rgba(0,216,216,1) 77.8% );
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+  }
+  #typedtext{
+    font-size: 20px;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', cursive, 'Trebuchet MS', sans-serif; */
+    font-family: 'Crimson Pro', serif; 
+    font-size: 25px;
+    margin: 20px 40px; 
+    letter-spacing: 2px;
+   /* background:-webkit-linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);*/
+   background-image: linear-gradient( 183.5deg,  rgba(244,173,6,1) 18.6%, rgba(229,251,31,1) 119.9% );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+	</style>
+</head>
+<body>
+    <audio controls autoplay loop hidden="" src="https://drive.google.com/uc?export=open&id=1IhVO7lo1hcVVbgUp5d4gBqc431_kfwQx" type="audio/mp3">none</audio>
+    <h1>
+       <center>DEAR SANTHO,</center> 
+    </h1>
+    <div id="typedtext">
+        
+    </div>
+    <script>
+    var aText = new Array(
+"I WANT TO SAY SOMETHING WHAT I FEEL,",
+"",
+"Each time when i'm demotivated",
+"You are there to recover me...",
+"",
+"When i get the state of confusion....",
+"You are here to say something...",
+"Whether it's right or wrong..",
+"",
+"Most of the Times i FEEL",
+"Why we didn't connected in",
+"School days..",
+"",
+"If we connected in school days..",
+"",
+"We may arrived at KRD,",
+"Small conversations while entering the school gate,",
+"And, some interaction in interval",
+"Sharing the lunch,",
+"Shuttle play at playtime,",
+"Some kidding around night classes,",
+"And,",
+"Some calls for doubts",
+"And,",
+"Some snacks in foodie shop.",
+"",
+"Now,i feel this things in my imagination",
+"if it's happened..",
+"It's a great pleasure in our school life.",
+"",
+"Unfortunately,I like to talk to you but those situations are can't be perfect to have a word with you..",
+"",
+"It's okie.",
+"",
+"But again & again I'm feel happy for,",
+"",
+"While i'm talk to you,",
+"while Sharing a things to you,",
+"You..",
+"You...",
+"",
+"Thanks d",
+"",
+"Santho♥️",
+"",
+"By,",
+"- AVIN"
+    );
+    var iSpeed = 100; // time delay of print out
+    var iIndex = 0; // start printing array at this posision
+    var iArrLength = aText[0].length; // the length of the text array
+    var iScrollAt = 20; // start scrolling up at this many lines
+     
+    var iTextPos = 0; // initialise text position
+    var sContents = ''; // initialise contents variable
+    var iRow; // initialise current row
+     
+    function typewriter()
+    {
+     sContents =  ' ';
+     iRow = Math.max(0, iIndex-iScrollAt);
+     var destination = document.getElementById("typedtext");
+     
+     while ( iRow < iIndex ) {
+      sContents += aText[iRow++] + '<br />';
+     }
+     destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+     if ( iTextPos++ == iArrLength ) {
+      iTextPos = 0;
+      iIndex++;
+      if ( iIndex != aText.length ) {
+       iArrLength = aText[iIndex].length;
+       setTimeout("typewriter()", 500);
+      }
+     } else {
+      setTimeout("typewriter()", iSpeed);
+     }
+    }
+    
+    
+    typewriter();
+    </script>
+</body>
+</html>
